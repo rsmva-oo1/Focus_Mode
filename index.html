@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus Master Pro</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="lang-switcher">
+        <button onclick="changeLang('uz')">UZ</button>
+        <button onclick="changeLang('en')">EN</button>
+    </div>
+
+    <div class="glass-card">
+        <span class="badge" id="status-text">Focus Session</span>
+        
+        <div class="timer-box">
+            <h1 id="timer-display">25:00</h1>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-line"></div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="start-btn" class="btn-primary">Start</button>
+            <button id="reset-btn" class="btn-secondary">Reset</button>
+        </div>
+
+        <div class="settings-mini">
+            <input type="number" id="focus-time" value="25" min="1">
+            <span>min</span>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
