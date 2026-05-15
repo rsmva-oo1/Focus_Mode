@@ -3,7 +3,18 @@ const translations = {
     en: { title: "Focus Mode", start: "Start", pause: "Pause", resume: "Resume", reset: "Reset" },
     ru: { title: "Фокус", start: "Старт", pause: "Пауза", resume: "Продолжить", reset: "Сброс" }
 };
+const quotes = [
+    "Diqqatni jamla, natija yaqin!",
+    "Kichik qadamlar katta muvaffaqiyatga yetaklaydi.",
+    "Hozir mehnat qil, keyin rohatlan.",
+    "Chalg'ima, sening vaqting qimmat!"
+];
 
+function showRandomQuote() {
+    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+    // HTMLda bitta <p id="quote"></p> yaratib qo'ysang kifoya
+    document.getElementById('quote').textContent = randomQuote;
+}
 let currentLang = 'uz';
 
 function changeLang(lang) {
