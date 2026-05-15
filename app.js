@@ -33,6 +33,7 @@ function updateDisplay() {
     const minutes = Math.floor(state.timeLeft / 60);
     const seconds = state.timeLeft % 60;
 
+document.title = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')} - Focus Mode`;
     timerDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
     
     // Progress bar foizini hisoblash va yangilash
