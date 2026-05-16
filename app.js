@@ -12,7 +12,7 @@ const quotes = [
 
 function showRandomQuote() {
     const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-    // HTMLda bitta <p id="quote"></p> yaratib qo'ysang kifoya
+ 
     document.getElementById('quote').textContent = randomQuote;
 }
 let currentLang = 'uz';
