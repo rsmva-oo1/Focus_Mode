@@ -81,6 +81,12 @@ function startTimer() {
 
 function finishSession() {
     pauseTimer();
+    confetti({
+    particleCount: 150,
+    spread: 70,
+    origin: { y: 0.6 },
+    colors: ['#6366f1', '#ec4899', '#ffffff']
+});
     alert("Vaqt tugadi! Ajoyib natija! Endi biroz dam oling.");
     state.timeLeft = (timeInput.value || 25) * 60;
     startBtn.textContent = "Start";
