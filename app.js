@@ -30,16 +30,14 @@ const state = {
     initialDuration: (parseInt(document.getElementById('focus-time').value) || 25) * 60
 };
 
-// UI Elementlarini tanlab olamiz
+
 const timerDisplay = document.getElementById('timer-display');
 const startBtn = document.getElementById('start-btn');
 const resetBtn = document.getElementById('reset-btn');
 const timeInput = document.getElementById('focus-time');
 const progressFill = document.getElementById('progress-line');
 
-/**
- * Ekranni yangilash funksiyasi
- */
+
 function updateDisplay() {
     const minutes = Math.floor(state.timeLeft / 60);
     const seconds = state.timeLeft % 60;
@@ -47,7 +45,6 @@ function updateDisplay() {
 document.title = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')} - Focus Mode`;
     timerDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
     
-    // Progress bar foizini hisoblash va yangilash
     const currentTotal = (timeInput.value || 25) * 60;
     const percentage = (state.timeLeft / currentTotal) * 100;
     progressFill.style.width = `${percentage}%`;
@@ -55,9 +52,7 @@ document.title = `${minutes.toString().padStart(2, '0')}:${seconds.toString().pa
     localStorage.setItem('savedTime', state.timeLeft);
 }
 
-/**
- * Taymerni to'xtatish (Pause)
- */
+
 function pauseTimer() {
     clearInterval(state.timerId);
     state.timerId = null;
@@ -66,9 +61,7 @@ function pauseTimer() {
     startBtn.textContent = "Resume";
     startBtn.classList.remove('active'); 
 
-/**
- * Taymerni ishga tushirish (Start)
- */
+
 function startTimer() {
     if (state.isActive) return;
 
@@ -85,9 +78,7 @@ function startTimer() {
     }, 1000);
 }
 
-/**
- * Fokus sessiyasi tugaganda
- */
+
 function finishSession() {
     pauseTimer();
     alert("Vaqt tugadi! Ajoyib natija! Endi biroz dam oling.");
