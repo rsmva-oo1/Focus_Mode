@@ -34,6 +34,7 @@ Loyihani o'z kompyuteringizda ishga tushirish juda oddiy:
     ```bash
     cd Focus_Mode
     ```
+    3. Faylni brauzerda oching
 
 
 ---
